@@ -8,7 +8,10 @@ double num2 = userInput("Введите k1: ");
 double num3 = userInput("Введите b2: ");
 double num4 = userInput("Введите k2: ");
 
-Result();
+double resX = ResultX(num1, num2, num3, num4);
+double resY = ResultY(num1, num2, num3, num4);
+
+Console.Write($"b1 = {num1}, k1 = {num2}, b2 = {num3}, k2 = {num4} -> ({resX}, {resY})");
 
 static int userInput (string message)
 {
@@ -21,7 +24,14 @@ static int userInput (string message)
     }
 }
 
-void Result()
+double ResultX (double a, double b, double c, double d)
 {
-    Console.WriteLine($"[{(num3 - num1) / (num2 - num4)}; {num2 * ((num3 - num1) / (num2 - num4)) + num1}");
+    double x = (c - a) / (b - d);
+    return x;
+}
+
+double ResultY (double a, double b, double c, double d)
+{
+    double y = b * (c - a) / (b - d) + a;
+    return y;
 }
