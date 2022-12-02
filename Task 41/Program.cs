@@ -4,14 +4,20 @@
 
 int num = InputFromUser("Задайте размер массива: ");
 int[] array = ElArrayFromUser(num, -100, 100);
-int count = 0;
+int res = CountPositiveNumbers(array);
 
-for (int i = 0; i < num; i++)
+Console.Write(String.Join(", ", array) + " -> ");
+Console.Write(res);
+
+int CountPositiveNumbers(int[] arr)
 {
-    if (array[i] > 0) count++;
+    int count = 0;
+    for (int i = 0; i < num; i++)
+    {
+        if (arr[i] > 0) count++;
+    }
+    return count;
 }
-
-Console.WriteLine(String.Join(", ", array) + " -> " + count);
 
 static int InputFromUser (string message)
 {
